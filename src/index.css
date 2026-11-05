@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+@layer base {
+  :root {
+    --background: 40 25% 97%;
+    --foreground: 30 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 15% 15%;
+    /* primary changed to logo green (~#3B7E6B) */
+    --primary: 160 36% 36%;
+    --primary-foreground: 40 25% 97%;
+    --secondary: 45 88% 60%;
+    --secondary-foreground: 30 15% 15%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 30 15% 45%;
+    --accent: 25 55% 45%;
+    --accent-foreground: 40 25% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 25% 97%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 160 36% 36%;
+    --radius: 0.5rem;
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(160 36% 36%) 0%,
+      hsl(160 42% 40%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(45 88% 60%) 0%,
+      hsl(45 78% 50%) 100%
+    );
+    --gradient-earth: linear-gradient(
+      180deg,
+      hsl(40 25% 97%) 0%,
+      hsl(40 20% 90%) 100%
+    );
+  }
+
+  .dark {
+    --background: 30 20% 12%;
+    --foreground: 40 25% 95%;
+    --card: 30 20% 15%;
+    --card-foreground: 40 25% 95%;
+    --popover: 30 20% 15%;
+    --popover-foreground: 40 25% 95%;
+    /* dark-mode primary adjusted to same hue, lighter */
+    --primary: 160 40% 45%;
+    --primary-foreground: 30 20% 12%;
+    --secondary: 45 88% 60%;
+    --secondary-foreground: 30 20% 12%;
+    --muted: 30 15% 25%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 25 55% 55%;
+    --accent-foreground: 40 25% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 25% 95%;
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 160 40% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+/* Page Load Animations */
+.animate-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-item:nth-child(1) { animation-delay: 0.1s; }
+.animate-item:nth-child(2) { animation-delay: 0.2s; }
+.animate-item:nth-child(3) { animation-delay: 0.3s; }
+.animate-item:nth-child(4) { animation-delay: 0.4s; }
+.animate-item:nth-child(5) { animation-delay: 0.5s; }
+.animate-item:nth-child(6) { animation-delay: 0.6s; }
+.animate-item:nth-child(7) { animation-delay: 0.7s; }
+.animate-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
